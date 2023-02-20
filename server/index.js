@@ -7,33 +7,21 @@ app.use(cors());
 
 app.use(express.json());
 
-const { getCompliment } = require('./controller')
-
-app.get("/api/compliment", getCompliment);
+const { getCompliment, getAdvice, getGoals, addGoal, changeGoal, deleteGoal } = require('./controller')
 
 const { getFortune } = require('./controller')
 
+
+
+app.get("/api/compliment", getCompliment);
 app.get("/api/fortune", getFortune);
-
-const { getAdvice } = require('./controller')
-
 app.get("/api/advice", getAdvice);
 
-let namesArr = [
-    {
-        fullName: "Draden Boyer"
-    },
-    {
-        fullName: "Max Smith"
-    },
-    {
-        fullName: "Mckay Brewer"
-    }
-]
+app.get('/api/goals', getGoals);
+app.post('/api/goals', addGoal);
+app.put('/api/goals', changeGoal);
+app.delete('/api/goals/:index', deleteGoal);
 
-const { getName } = require('./controller')
-
-app.get('/api/name', getName);
 
 
 app.listen(4000, () => console.log("Server running on 4000"));

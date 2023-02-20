@@ -1,0 +1,31 @@
+header{
+    background-color: gold;
+    justify-content: space-around;
+    height:100px;
+    display: flex;
+    align-items: center;
+    
+}
+
+h1{
+    color:blue;
+}
+
+div{
+    background-color: blue;
+    justify-content: center;
+    display: flex
+}
+
+
+main{
+    display:flex;
+}
+
+section{
+    flex: .5;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}

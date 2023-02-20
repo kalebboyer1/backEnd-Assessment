@@ -1,3 +1,17 @@
+let goals = [
+    {
+        goal: "Get a job",
+        accomplished: false
+    },
+    {
+        goal: "Start a bootcamp",
+        accomplished: true
+    }
+]
+
+
+
+
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -33,12 +47,24 @@ module.exports = {
 
 
 
-    getName: (req, res) => {
-        let fullNamesArr = namesArr.map(namesObj => {
-            return fullname
-        })
+    getGoals: (req, res) => {
+        res.status(200).send(goals)
+    },
 
-        res.status(200).send(newName)
-        return
+    addGoal: (req, res) => {
+        goals.push(req.body)
+        res.status(200).send(goals)
+    },
+
+    changeGoal: (req, res) => {
+        let { index } = req.body
+        goals[+index].accomplished = !goals[+index].accomplished
+        res.status(200).send(goals)
+    },
+    deleteGoal: (req, res) => {
+        let { index } = req.params
+        goals.splice(+index, 1)
+        res.status(200).send(goals)
     }
+    
 }

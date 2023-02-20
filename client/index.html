@@ -2,12 +2,36 @@
 <html>
   <head>
     <title>Back End Assessment</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body class="container">
-    <button id="complimentButton">Get a compliment</button>
-    <button id="fortuneButton">Get a fortune</button>
-    <button id="adviceButton">Get advice</button>
-    <button id="namebutton">Get name</button>
+    <header>
+      <h1>2023 Goals</h1>
+      
+        <button id="complimentButton">Get a compliment</button>
+        <button id="fortuneButton">Get a fortune</button>
+        <button id="adviceButton">Get advice</button>
+      
+    </header>
+    
+    <br>
+
+    <form>
+      <input type="text" placeholder="Enter a new goal">
+      <button>Make-The-Commitment</button>
+    </form>
+    
+    <main>
+      <section id="planned">
+        <h2>Planned Goals</h2>
+        <ul id="planned-list"></ul>
+      </section>
+
+      <section id="accomplished">
+        <h2>Accomplished Goals</h2>
+        <ul id="accomplished-list"></ul>
+      </section>
+    </main>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
